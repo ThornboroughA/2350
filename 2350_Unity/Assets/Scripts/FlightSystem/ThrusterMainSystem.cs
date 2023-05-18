@@ -85,6 +85,8 @@ namespace TwentyThreeFifty.Propulsion
         {
             // TODO: Forward thrust is currently tied to the Y axis, for some reason.
 
+            thrustersForward.thrustInput = movementAmount.y;
+
 
         }
 

@@ -20,12 +20,18 @@ namespace TwentyThreeFifty.Propulsion
 
         public Rigidbody rb;
         [Tooltip("The current thrust of this thruster.")]
-        private float currentThrust;
+        public float currentThrust;
 
         private void Awake()
         {
             // Set up rigidbody.
             rb = GetComponent<Rigidbody>();
+        }
+
+        private void Update()
+        {
+            AddForce(currentThrust);
+            Debug.Log($"Adding {currentThrust} to {gameObject.name}");
         }
 
 
