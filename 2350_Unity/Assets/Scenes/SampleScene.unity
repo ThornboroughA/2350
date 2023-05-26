@@ -1009,7 +1009,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!73398921 &927856369
 VFXRenderer:
   serializedVersion: 1
@@ -1057,8 +1057,8 @@ VisualEffect:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927856368}
-  m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 03dcc54dbd3d1034d9e491e0e682aedc, type: 3}
+  m_Enabled: 0
+  m_Asset: {fileID: 8926484042661614526, guid: 754751d250da88a4e92f576f4490cfa9, type: 3}
   m_InitialEventName: OnPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -1067,7 +1067,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: -0.09
+        m_Name: EmissionRadius
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -1095,14 +1098,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927856368}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -0.149, z: 0.00000590086}
+  m_LocalRotation: {x: -0.27889818, y: -0.23824584, z: -0.07163725, w: 0.9275359}
+  m_LocalPosition: {x: 0, y: 0, z: -0.112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -33.471, y: -28.811, z: 0}
 --- !u!4 &969607558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
