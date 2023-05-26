@@ -11,7 +11,6 @@ namespace TwentyThreeFifty.Propulsion
     {
         public ThrusterCluster[] thrusterClusters;
 
-        public float thrustInput;
 
         private void Start()
         {
@@ -21,11 +20,13 @@ namespace TwentyThreeFifty.Propulsion
             }
         }
 
-        private void Update()
+
+        public void ApplyForceOnLateralSet(Rigidbody rb, Vector3 direction, float power)
         {
             foreach (ThrusterCluster cluster in thrusterClusters)
             {
-                cluster.activeThrust = thrustInput;
+
+                cluster.ApplyForceToThrusters(rb, direction, power);
             }
         }
     }

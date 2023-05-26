@@ -10,37 +10,28 @@ namespace TwentyThreeFifty.Propulsion
     /// <summary>
     /// An individual thruster. Tied to a thruster cluster. Can be specified by type.
     /// </summary>
-    [RequireComponent(typeof(Rigidbody))]
     public class Thruster : MonoBehaviour
     {
         [Tooltip("The visual effects graph component for this thruster.")]
         private VisualEffect thrusterEffects;
 
+        [SerializeField] private float thrusterThrust = 1f;
+
         public Propulsion_DataObjects.ThrusterType thrusterType;
 
-        public Rigidbody rb;
-        [Tooltip("The current thrust of this thruster.")]
-        public float currentThrust;
 
-        private void Awake()
+        public Rigidbody ActivateEngine(Rigidbody rb, Vector3 direction, float power)
         {
-            // Set up rigidbody.
-            rb = GetComponent<Rigidbody>();
-        }
 
-        private void Update()
-        {
-            AddForce(currentThrust);
-            Debug.Log($"Adding {currentThrust} to {gameObject.name}");
+            Vector3 force = direction * power * thrusterThrust;
+            rb.AddForceAtPosition(force, transform.localPosition);
+
+            Debug.Log($"Applying force of {force} at position {transform.localPosition}.");
+
+            return rb;
         }
 
 
-        public void AddForce(float forceAmount)
-        {
-            Vector3 forceToAdd = new Vector3(0, 0, forceAmount);
-
-            rb.AddForce(forceToAdd, ForceMode.Impulse);
-        }
 
     }
 }

@@ -129,7 +129,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1491646}
-  - component: {fileID: 1491648}
   - component: {fileID: 1491647}
   m_Layer: 0
   m_Name: Thruster (3)
@@ -165,36 +164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ef756d09ae49a44957e6c86ef052ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrusterThrust: 1
   thrusterType: 1
-  rb: {fileID: 0}
-  currentThrust: 0
---- !u!54 &1491648
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491645}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &123818579 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
@@ -210,7 +181,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 217667470}
-  - component: {fileID: 217667472}
   - component: {fileID: 217667471}
   m_Layer: 0
   m_Name: Thruster (2)
@@ -246,36 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ef756d09ae49a44957e6c86ef052ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrusterThrust: 1
   thrusterType: 1
-  rb: {fileID: 0}
-  currentThrust: 0
---- !u!54 &217667472
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 217667469}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!4 &275389350 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
@@ -466,7 +408,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrusterClusters:
   - {fileID: 472376652}
-  thrustInput: 0
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,10 +578,9 @@ MonoBehaviour:
   - {fileID: 217667471}
   - {fileID: 1491647}
   - {fileID: 1781657019}
-  activeThrust: 0
-  primaryForce: 1
-  secondaryForce: 0.5
-  tertiaryForce: 0.25
+  primaryForce: 0.1
+  secondaryForce: 0.05
+  tertiaryForce: 0.01
 --- !u!1 &547029744
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,6 +733,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939461501}
     m_Modifications:
+    - target: {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
         type: 3}
       propertyPath: m_RootOrder
@@ -853,7 +798,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thruster (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
@@ -877,7 +823,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 794296046}
-  - component: {fileID: 794296048}
   - component: {fileID: 794296047}
   m_Layer: 0
   m_Name: Thruster (1)
@@ -913,36 +858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ef756d09ae49a44957e6c86ef052ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrusterThrust: 1
   thrusterType: 1
-  rb: {fileID: 0}
-  currentThrust: 0
---- !u!54 &794296048
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 794296045}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1070,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939461501}
     m_Modifications:
+    - target: {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
         type: 3}
       propertyPath: m_RootOrder
@@ -1213,7 +1135,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thruster (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1227,7 +1150,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1248756380}
-  - component: {fileID: 1248756382}
   - component: {fileID: 1248756381}
   m_Layer: 0
   m_Name: Thruster
@@ -1263,36 +1185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ef756d09ae49a44957e6c86ef052ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrusterThrust: 1
   thrusterType: 1
-  rb: {fileID: 0}
-  currentThrust: 0
---- !u!54 &1248756382
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1248756379}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1370254127
 GameObject:
   m_ObjectHideFlags: 0
@@ -1339,7 +1233,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 993671b1cbaee5f40aeea489162eee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbParameters: {fileID: 11400000, guid: 4c0c79c4daa032743b8b2adf8667c810, type: 2}
   thrustersForward: {fileID: 348079777}
   thrustersBackward: {fileID: 0}
   thrustersPort: {fileID: 0}
@@ -1355,7 +1248,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1365,9 +1258,9 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -1412,6 +1305,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939461501}
     m_Modifications:
+    - target: {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
         type: 3}
       propertyPath: m_RootOrder
@@ -1472,7 +1370,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thruster (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1591,7 +1490,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1781657018}
-  - component: {fileID: 1781657020}
   - component: {fileID: 1781657019}
   m_Layer: 0
   m_Name: Thruster_Primary
@@ -1627,36 +1525,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4ef756d09ae49a44957e6c86ef052ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrusterThrust: 1
   thrusterType: 0
-  rb: {fileID: 0}
-  currentThrust: 0
---- !u!54 &1781657020
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1781657017}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1939461497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1724,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1939461501}
     m_Modifications:
+    - target: {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 32222517060614840, guid: bb80b437703ab2d46ad07e1366e0d5b0,
         type: 3}
       propertyPath: m_RootOrder
@@ -1914,7 +1789,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Thruster
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -2152398571038784187, guid: bb80b437703ab2d46ad07e1366e0d5b0, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
