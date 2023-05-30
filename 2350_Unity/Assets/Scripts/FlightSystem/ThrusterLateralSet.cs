@@ -23,10 +23,12 @@ namespace TwentyThreeFifty.Propulsion
 
         public void ApplyForceOnLateralSet(Rigidbody rb, Vector3 direction, float power)
         {
+            float actualPower = Mathf.Abs(power );
+
             foreach (ThrusterCluster cluster in thrusterClusters)
             {
 
-                cluster.HandleThrusterCluster(rb, direction, power);
+                cluster.HandleThrusterCluster(rb, direction, actualPower);
             }
         }
     }

@@ -82,7 +82,7 @@ namespace TwentyThreeFifty.Propulsion
             if (movementAmount.y >= 0) return;
             Vector3 direction = new Vector3(0, 0, -1);
 
-            thrustersForward.ApplyForceOnLateralSet(_rigidbody, direction, movementAmount.y);
+            thrustersBackward.ApplyForceOnLateralSet(_rigidbody, direction, movementAmount.y);
             moveDirection.w = 1;
 
         }
@@ -93,7 +93,7 @@ namespace TwentyThreeFifty.Propulsion
          
             Vector3 direction = new Vector3(-1, 0, 0);
 
-            thrustersForward.ApplyForceOnLateralSet(_rigidbody, direction, movementAmount.y);
+            thrustersPort.ApplyForceOnLateralSet(_rigidbody, direction, movementAmount.y);
 
 
             moveDirection.z = 1;
@@ -104,7 +104,7 @@ namespace TwentyThreeFifty.Propulsion
             if (movementAmount.x <= 0) return;
             Vector3 direction = new Vector3(1, 0, 0);
 
-            thrustersForward.ApplyForceOnLateralSet(_rigidbody, direction, movementAmount.y);
+            thrustersStarboard.ApplyForceOnLateralSet(_rigidbody, direction, movementAmount.y);
 
             moveDirection.y = 1;
 
