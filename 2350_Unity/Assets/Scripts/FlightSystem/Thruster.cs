@@ -13,7 +13,7 @@ namespace TwentyThreeFifty.Propulsion
     public class Thruster : MonoBehaviour
     {
         [Tooltip("The visual effects graph component for this thruster.")]
-        private VisualEffect thrusterEffects;
+        public VisualEffect thrusterEffects;
 
         [SerializeField] private float thrusterThrust = 1f;
 
@@ -26,10 +26,11 @@ namespace TwentyThreeFifty.Propulsion
             Vector3 force = direction * power * thrusterThrust;
             rb.AddForceAtPosition(force, transform.localPosition);
 
-            Debug.Log($"Applying force of {force} at position {transform.localPosition}.");
+           // Debug.Log($"Applying force of {force} at position {transform.localPosition}.");
 
             return rb;
         }
+
 
 
 

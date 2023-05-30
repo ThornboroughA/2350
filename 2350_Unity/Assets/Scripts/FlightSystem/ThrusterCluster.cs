@@ -11,6 +11,8 @@ namespace TwentyThreeFifty.Propulsion
     {
         public Thruster[] thrusters;
 
+        [Tooltip("The visual status of the thrusters. If active, start active. If disabled, start inactive. If destroy, delete on start.")]
+        [SerializeField] private VisualType thrusterVisuals = VisualType.active;
 
         [Header("Thruster strength")]
         [Tooltip("The force output of the primary engines.")]
@@ -19,6 +21,28 @@ namespace TwentyThreeFifty.Propulsion
         public float secondaryForce = 0.5f;
         [Tooltip("The force output of the tertiary engines.")]
         public float tertiaryForce = 0.25f;
+
+
+        private void Start()
+        {
+            // Disable or destroy thruster particle systems if configured to.
+            if (thrusterVisuals == VisualType.inactive)
+            {
+                foreach (Thruster thruster in thrusters)
+                {
+                    if (thruster.thrusterEffects == null) continue;
+                    thruster.thrusterEffects.enabled = false;
+                }
+            } else if (thrusterVisuals == VisualType.destroy)
+            {
+                foreach (Thruster thruster in thrusters)
+                {
+                    if (thruster.thrusterEffects == null) continue;
+                    Destroy(thruster.thrusterEffects);
+                }
+            }
+        }
+
 
 
         /// <summary>
