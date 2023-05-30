@@ -26,7 +26,7 @@ namespace TwentyThreeFifty.Propulsion
             foreach (ThrusterCluster cluster in thrusterClusters)
             {
 
-                cluster.ApplyForceToThrusters(rb, direction, power);
+                cluster.HandleThrusterCluster(rb, direction, power);
             }
         }
     }

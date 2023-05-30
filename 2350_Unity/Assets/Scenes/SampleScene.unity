@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterEffects: {fileID: 0}
-  thrusterThrust: 1
+  thrusterClusterModifier: 1
   thrusterType: 1
 --- !u!1 &217667469
 GameObject:
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterEffects: {fileID: 0}
-  thrusterThrust: 1
+  thrusterClusterModifier: 1
   thrusterType: 1
 --- !u!1 &330585543
 GameObject:
@@ -299,13 +299,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.62, z: -4.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1370254128}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -569,9 +569,6 @@ MonoBehaviour:
   - {fileID: 217667471}
   - {fileID: 1491647}
   thrusterVisuals: 0
-  primaryForce: 0.1
-  secondaryForce: 0.05
-  tertiaryForce: 0.01
 --- !u!1 &547029744
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,7 +758,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterEffects: {fileID: 0}
-  thrusterThrust: 1
+  thrusterClusterModifier: 1
   thrusterType: 1
 --- !u!1 &832575517
 GameObject:
@@ -1010,7 +1007,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterEffects: {fileID: 0}
-  thrusterThrust: 1
+  thrusterClusterModifier: 1
   thrusterType: 1
 --- !u!1 &1370254127
 GameObject:
@@ -1042,9 +1039,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 330585546}
   - {fileID: 348079776}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1370254129
 MonoBehaviour:
@@ -1120,7 +1118,7 @@ Transform:
   m_Children:
   - {fileID: 1949426356}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1781657017
 GameObject:
@@ -1168,7 +1166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thrusterEffects: {fileID: 927856370}
-  thrusterThrust: 1
+  thrusterClusterModifier: 1
   thrusterType: 0
 --- !u!1 &1949426355
 GameObject:

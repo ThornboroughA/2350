@@ -23,7 +23,7 @@ public class Propulsion_Inputs : MonoBehaviour
             mainControls = new MainControls();
 
             mainControls.Locomotion.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
-
+            mainControls.Locomotion.Movement.canceled += i => movementInput = Vector2.zero;
         }
         mainControls.Enable();
     }
@@ -34,7 +34,7 @@ public class Propulsion_Inputs : MonoBehaviour
 
     private void Update()
     {
-        associatedThrusterSet.movementAmount = HandleMovementInput();
+       associatedThrusterSet.movementAmount = HandleMovementInput();
     }
 
     private Vector2 HandleMovementInput()
