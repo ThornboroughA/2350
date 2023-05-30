@@ -19,7 +19,7 @@ namespace TwentyThreeFifty.Propulsion
         [HideInInspector][Tooltip("The amount of thrust a thruster of this type gets as dictated by the cluster. Applied on launch.")]
         public float thrusterClusterModifier = 1f;
         [Tooltip("An additional strength modifier applied locally by the thruster.")]
-        [SerializeField] private const float thrusterLocalModifier = 1f;
+        [SerializeField] private float thrusterLocalModifier = 1f;
         
         private float clusterInputStrength = 0f;
         private float visualStrength = 0f;
@@ -64,7 +64,7 @@ namespace TwentyThreeFifty.Propulsion
             }
             thrusterEffects.enabled = true;
 
-            float transitionSpeed = 2f;
+            float transitionSpeed = 5f;
             visualStrength = Mathf.Lerp(visualStrength, clusterInputStrength, Time.deltaTime * transitionSpeed);
 
 
